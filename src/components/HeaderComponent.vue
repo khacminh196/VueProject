@@ -13,11 +13,8 @@
                                 <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </li>
-                        <li class="nav-item dropdown connection">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tiếng Việt</a>
-                        </li>
-                        <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+                        <li class="nav-item dropdown connection" v-for="(language, index) in languages" :key="index" v-on:click="handleChangeLanguage(language.key)">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ language.name }}</a>
                         </li>
                     </ul>
                 </div>
@@ -28,7 +25,21 @@
 
 <script>
 export default {
-    
+    props : {
+        languages : {
+            type : Array
+        }
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        handleChangeLanguage(value) {
+            this.$emit('changeLang', value);
+        }
+    },
 }
 </script>
 

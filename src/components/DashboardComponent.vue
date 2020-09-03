@@ -27,119 +27,17 @@
                 <div class="ecommerce-widget">
                     <table width="100%" height="600px" border="1px solid">
                         <tr>
-                            <th>Name</th>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
+                            <td></td>
+                            <th>{{ $t('formElement.name') }}</th>
+                            <th>{{ $t('formElement.age') }}</th>
+                            <th>{{ $t('formElement.phone') }}</th>
                         </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
+                        <tr v-for="user in users" v-bind:key="user.id">
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.age }}</td>
+                            <td>{{ user.phone }}</td>
                         </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Age</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                            <td>abc</td>
-                            <td>anc</td>
-                        </tr>
-
-                        
                     </table>
                 </div>
             </div>
@@ -149,10 +47,59 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            users : [
+                {
+                    id : 1,
+                    name : "Join Wick 1",
+                    age : 20,
+                    phone : "0999999999"
+                },
+                {
+                    id : 2,
+                    name : "Join Wick 2",
+                    age : 21,
+                    phone : "0988888888"
+                },
+                {
+                    id : 3,
+                    name : "Join Wick 3",
+                    age : 22,
+                    phone : "0977777777"
+                },
+                {
+                    id : 4,
+                    name : "Join Wick 4",
+                    age : 23,
+                    phone : "0966666666"
+                },
+                {
+                    id : 5,
+                    name : "Join Wick 5",
+                    age : 24,
+                    phone : "0555555555"
+                },
+                {
+                    id : 6,
+                    name : "Join Wick 6",
+                    age : 25,
+                    phone : "0944444444"
+                },
+                {
+                    id : 7,
+                    name : "Join Wick 7",
+                    age : 26,
+                    phone : "0933333333"
+                },
+            ]
+        }
+    }
 }
 </script>
 
 <style>
-    
+    .ecommerce-widget {
+        text-align : center
+    }
 </style>

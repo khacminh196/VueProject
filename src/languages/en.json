@@ -1,0 +1,20 @@
+{
+    "menu" : {
+        "menu" : "Menu",
+        "dashboard" : "Dashboard",
+        "element" : "Elements",
+        "chart" : "Chart",
+        "form" : "Form",
+        "table" : "Tables"
+    },
+    "formElement" : {
+        "name" : "Name",
+        "age"  : "Age",
+        "phone" : "Phone"
+    },
+    "footer" : {
+        "about" : "About",
+        "support" : "Support",
+        "contact" : "Contact Us"
+    }
+}

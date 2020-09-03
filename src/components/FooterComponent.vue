@@ -8,9 +8,9 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
-                            <a href="javascript: void(0);">Support</a>
-                            <a href="javascript: void(0);">Contact Us</a>
+                            <a href="javascript: void(0);">{{ $t('footer.about') }}</a>
+                            <a href="javascript: void(0);">{{ $t('footer.support') }}</a>
+                            <a href="javascript: void(0);">{{ $t('footer.contact') }}</a>
                         </div>
                     </div>
                 </div>
