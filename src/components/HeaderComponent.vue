@@ -24,6 +24,7 @@
 </template>
 
 <script>
+
 export default {
     props : {
         languages : {
@@ -39,6 +40,9 @@ export default {
         handleChangeLanguage(value) {
             this.$emit('changeLang', value);
         }
+    },
+    mounted() {
+        console.log(this.$i18n);
     },
 }
 </script>
