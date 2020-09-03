@@ -39,10 +39,11 @@ export default {
     methods: {
         handleChangeLanguage(value) {
             this.$emit('changeLang', value);
+            console.log(this.$i18n);
+            location.reload();
         }
     },
     mounted() {
-        console.log(this.$i18n);
     },
 }
 </script>

@@ -28,7 +28,6 @@
                 
                 Email : <input v-validate="'required|email'" name="email" type="text" /><br />
                         <span>{{ errors.first('email') }}</span><br>
-                        
                     <table width="100%" height="600px" border="1px solid">
                         <tr>
                             <td></td>
