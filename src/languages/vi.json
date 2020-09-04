@@ -8,6 +8,7 @@
         "table" : "Bảng"
     },
     "formElement" : {
+        "add" : "Thêm",
         "name" : "Tên",
         "age"  : "Tuổi",
         "phone" : "SDT"

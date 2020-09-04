@@ -11,7 +11,8 @@
     "app": "^0.1.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-i18n": "^8.21.0"
+    "vue-i18n": "^8.21.0",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

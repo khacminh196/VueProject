@@ -25,20 +25,33 @@
                 <!-- end pageheader  -->
                 <!-- ============================================================== -->
                 <div class="ecommerce-widget">
-                    <table width="100%" height="600px" border="1px solid">
-                        <tr>
-                            <td></td>
-                            <th>{{ $t('formElement.name') }}</th>
-                            <th>{{ $t('formElement.age') }}</th>
-                            <th>{{ $t('formElement.phone') }}</th>
-                        </tr>
-                        <tr v-for="user in users" v-bind:key="user.id">
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.age }}</td>
-                            <td>{{ user.phone }}</td>
-                        </tr>
-                    </table>
+                    <a class="btn btn-secondary ml-0" v-on:click="showFormAddUser">{{ $t('formElement.add') }}</a>
+                    <div class="d-flex flex-row">
+                        <table width="60%" height="600px" border="1px solid">
+                            <tr>
+                                <td></td>
+                                <th>{{ $t('formElement.name') }}</th>
+                                <th>{{ $t('formElement.age') }}</th>
+                                <th>{{ $t('formElement.phone') }}</th>
+                            </tr>
+                            <tr v-for="( user, index ) in users" v-bind:key="index">
+                                <td>{{ index+1 }}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.age }}</td>
+                                <td>{{ user.phone }}</td>
+                            </tr>
+                        </table>
+                        <div class="form-add-user" v-bind:style="{ display : display }">
+                            <form>
+                                <div class="form-group ml-5">
+                                    {{ $t('formElement.name') }} : <input type="text" v-model="user.name" class="form-control" placeholder="Example input">
+                                    {{ $t('formElement.age') }} : <input type="number" v-model="user.age" class="form-control" placeholder="Example input">
+                                    {{ $t('formElement.phone') }} : <input type="text" v-model="user.phone" class="form-control" placeholder="Example input">
+                                    <button type="button" v-on:click="handleAddUser()" class="btn btn-success mt-3">{{ $t('formElement.add') }}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,50 +62,30 @@
 export default {
     data() {
         return {
-            users : [
-                {
-                    id : 1,
-                    name : "Join Wick 1",
-                    age : 20,
-                    phone : "0999999999"
-                },
-                {
-                    id : 2,
-                    name : "Join Wick 2",
-                    age : 21,
-                    phone : "0988888888"
-                },
-                {
-                    id : 3,
-                    name : "Join Wick 3",
-                    age : 22,
-                    phone : "0977777777"
-                },
-                {
-                    id : 4,
-                    name : "Join Wick 4",
-                    age : 23,
-                    phone : "0966666666"
-                },
-                {
-                    id : 5,
-                    name : "Join Wick 5",
-                    age : 24,
-                    phone : "0555555555"
-                },
-                {
-                    id : 6,
-                    name : "Join Wick 6",
-                    age : 25,
-                    phone : "0944444444"
-                },
-                {
-                    id : 7,
-                    name : "Join Wick 7",
-                    age : 26,
-                    phone : "0933333333"
-                },
-            ]
+            users : [],
+            display : 'none',
+            user : {
+                name : '',
+                age : '',
+                phone : ''
+            }
+        }
+    },
+    computed : {
+
+    },
+    mounted() {
+        this.getUsers()
+    },
+    methods : {
+        getUsers() {
+            this.users = this.$store.state.users
+        },
+        showFormAddUser() {
+            this.display === 'block' ? this.display = 'none' : this.display = 'block'
+        },
+        handleAddUser() {
+            this.$store.commit('addUser', this.user);
         }
     }
 }
@@ -101,5 +94,9 @@ export default {
 <style>
     .ecommerce-widget {
         text-align : center
+    }
+    .form-add-user {
+        margin-left: 30px;
+        width: 30%;
     }
 </style>

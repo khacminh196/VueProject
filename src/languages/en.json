@@ -8,6 +8,7 @@
         "table" : "Tables"
     },
     "formElement" : {
+        "add" : "Add",
         "name" : "Name",
         "age"  : "Age",
         "phone" : "Phone"
