@@ -66,7 +66,7 @@ export default {
             display : 'none',
             user : {
                 name : '',
-                age : '',
+                age : null,
                 phone : ''
             }
         }
@@ -85,7 +85,17 @@ export default {
             this.display === 'block' ? this.display = 'none' : this.display = 'block'
         },
         handleAddUser() {
-            this.$store.commit('addUser', this.user);
+            const newUser = {
+                name : this.user.name,
+                age : this.user.age,
+                phone : this.user.phone
+            }
+            
+            this.$store.commit('addUser', newUser);
+
+            this.user.name = '',
+            this.user.age = '',
+            this.user.phone = ''
         }
     }
 }
